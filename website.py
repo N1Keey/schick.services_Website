@@ -69,6 +69,12 @@ def home():
         return redirect('/')
     return render_template('home.j2')
 
+@app.route('/kalender', methods=['GET', 'POST'])
+def kalender():
+    if not session.get('logged_in'):
+        return redirect('/')
+    return render_template('kalender.j2')
+
 
 @app.route('/admin_auth', methods=['GET', 'POST'])
 def admin_auth():
@@ -108,5 +114,5 @@ def test():
 
 
 if __name__ == '__main__':
-    #app.run()
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
+    #app.run(host='0.0.0.0', port=5000)

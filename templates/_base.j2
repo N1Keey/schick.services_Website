@@ -1,4 +1,8 @@
-<link rel="stylesheet" href="static/bootstrap.css">
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">	
+
 {% block styles %}
     <style>
         html, body {margin: 0; height: 100%; overflow: hidden}
@@ -61,10 +65,11 @@
 {% block title %} <title>Title</title> {% endblock %}
 {% block navbar %}
     <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
-        <a class="navbar-brand" href="/home">schick-services</a>
+        <a class="navbar-brand" href="/home">schick.services</a>
             </div>
             <ul class="navbar-nav">
                 <li {% if active_link == 'Home' %} class="active" {% endif %}> <a class = "nav-link" href="/home">Home</a></li>
+                <li {% if active_link == 'Kalender' %} class="active" {% endif %}> <a class = "nav-link" href="/kalender">Kalender</a></li>
             </ul>
             <ul class="navbar-nav mr-auto">
                 <li {% if active_link == 'Usermanagement' %} class="active" {% endif %}><a class = "nav-link" href="/admin_auth">Usermanagement</a></li>
@@ -80,5 +85,7 @@
 {% endblock %}
 {% block content %}
     <div class='content'>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
     </div>
 {% endblock %}
