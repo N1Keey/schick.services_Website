@@ -97,3 +97,4 @@ class Role(Base):
         user_roles.append(new_user_role)
         user.roles=user_roles
         session.commit()
+        
