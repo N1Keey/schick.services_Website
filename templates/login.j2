@@ -1,0 +1,29 @@
+{% extends "_base.j2" %}
+{% block styles %}
+    {{ super() }}
+    <style>
+        .content{
+            position: relative;
+            left: 25px;
+        }
+    </style>
+{% endblock %}
+{% block title %} <title>Login</title> {% endblock %}
+{% block navbar %} {% endblock %}
+{% block content %}
+    <div class='content'>
+        <h1>KHL-Fragenbot</h1>
+        <h2>Login</h2>
+        <form action="" method='POST'>
+            <p><input type="email" id="Email" name="Email" placeholder="Email"></p>
+            <p><input type="password" id="Passwort" name="Passwort" placeholder="Passwort"></p>
+            <p>
+                <input type="submit" id="Login" name="Login" value="Login"> 
+                {# <a href="/pw-vergessen">Passwort vergessen?</a> #}
+            </p>
+        </form>
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div> {# Email oder Passwort falsch! #}
+        {% endfor %}
+    </div>
+{% endblock %}

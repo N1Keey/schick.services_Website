@@ -1,0 +1,51 @@
+{% extends "_base.j2" %}
+{% set active_link = 'Usermanagement' %}
+{% block styles %}
+  {{ super() }}
+  <style>
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin:0;
+    }
+    .navbar{
+      width:0;
+    }
+    .content{
+      float:left;
+      margin-left:5px;
+    }
+  </style>
+{% endblock %}
+{% block title %} <title>Usermanagement</title> {% endblock %}
+{% block navbar %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <div class='content'>
+    <form action="/usermanagement" method='POST'>
+      <table>
+        <tr>
+          <th>Email</th>
+          <th>Rollen</th>
+          <th>Löschen</th>
+        </tr>
+        {% for user in users %}
+          {% if user.get('Email') != 'Nschick@mail.hs-ulm.de'%}
+            <tr>
+              <td>{{ user['Email'] }}</td>
+              <td>{{ user['Roles'] }}</td> 
+              <td><button type="submit" class='X_Button' name= "Button_del" value={{ user['ID'] }}>X</button></td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </table>
+      <p><a href="/registrieren">User registrieren</a></p>
+    </form>
+  </div>
+{% endblock %}

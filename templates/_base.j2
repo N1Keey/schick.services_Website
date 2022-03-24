@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="static/bootstrap.css">
+{% block styles %}
+    <style>
+        html, body {margin: 0; height: 100%; overflow: hidden}
+        input[type=email], input[type=password] {
+            width: 300px;
+        }
+        .X_Button{
+            background-color: red;
+            Color: white;
+        }
+        .navbar { 
+            margin-bottom: 0;
+        }
+        .left_navbar{
+            float:left;
+            width:25%;
+            position: relative;
+            top:0;
+            bottom:0;
+        }
+        .content{
+            float:right;
+            width:75%;
+            position:relative;
+        }
+        .buttons_4_kh_choosing, .checkboxes_4_kh_choosing {
+            padding: 0;
+            margin-top:-14;
+            width: 25%;
+            overflow-y: auto;
+            position: fixed;
+            height:85%;
+        }
+        .checkbox_4_kh_choosing {
+            height:82.2%
+        }
+        #btn_4_kh:hover, .kh_checkbox_label:hover, #btn_4_umstand:hover{
+            background-color:lightgreen;
+        }
+        #cbx_4_kh{
+            float:right;
+        }
+        #btn_4_kh, .kh_checkbox_label {
+            border-style:solid;
+            border-color: lightgreen;
+            border-width: 1px;
+            width:100%;
+            margin:0;
+            padding:7;
+            text-align:left;
+            margin-left:-1
+        }
+        #btn_kh_cbxsubmit{
+            position:fixed;
+            width:25%;
+            bottom:0;
+        }
+    </style>
+{% endblock %}
+{% block title %} <title>Title</title> {% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
+        <a class="navbar-brand" href="/home">schick-services</a>
+            </div>
+            <ul class="navbar-nav">
+                <li {% if active_link == 'Home' %} class="active" {% endif %}> <a class = "nav-link" href="/home">Home</a></li>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+                <li {% if active_link == 'Usermanagement' %} class="active" {% endif %}><a class = "nav-link" href="/admin_auth">Usermanagement</a></li>
+                <li><a class = "nav-link" href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+{% block left_navbar %}
+    <div class='left_navbar'>
+
+    </div>
+{% endblock %}
+{% block content %}
+    <div class='content'>
+    </div>
+{% endblock %}

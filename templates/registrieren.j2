@@ -1,0 +1,20 @@
+{% extends "_base.j2" %}
+{% block title %} <title>Registrieren</title> {% endblock %}
+{% block navbar %} {% endblock %}
+{% block content %}
+    <div class='content'>
+        <a href="/usermanagement">Zurück</a>
+        <h1>KHL-Lernprogramm</h1>
+        <title>Registrieren</title>
+        <h2>Registrieren</h2>
+        <form action="" method='POST'>
+            <p><input type="email" id="Email" name="Email" placeholder="Email" required></p>
+            <p><input type="password" id="Passwort" name="Passwort" placeholder="Passwort" required></p>
+            <p><input type="password" id="pw_validation" name="pw_validation" placeholder="Passwort bestätigen" required></p>
+            <p><input type="submit" id="Registrieren" name="Registrieren" value="Registrieren"></p>
+        </form>
+        {% for message in get_flashed_messages() %}
+            <div class="alert-error">{{ message }}</div> {# Passwörter stimmen nicht überein! #}
+        {% endfor %}
+    </div>
+{% endblock %}

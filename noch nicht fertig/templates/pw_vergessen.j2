@@ -1,0 +1,21 @@
+{% extends "_base.j2" %}
+{% block styles %}
+    {{ super() }}
+    <style>
+        .content{
+            position: relative;
+            left: 25px;
+        }
+    </style>
+{% endblock %}
+{% block title %} <title>PW-vergessen</title> {% endblock %}
+{% block navbar %} {% endblock %}
+{% block content %}
+    <div class='content'>
+        <a href="/">Zurück</a>
+        <h2>Geben Sie ihre Email ein, um das Passwort wieder herzustellen</h2>
+        <form action="?" method='POST'>
+            <p><input type="email" id="Email" name="Email" placeholder="Email"></p>
+            <p><input type="submit">
+    </div>
+{% endblock %}
