@@ -5,7 +5,7 @@ import json
 import random
 import math
 
-engine = create_engine('sqlite:///users.db',connect_args={'check_same_thread': False})
+engine = create_engine('sqlite://users.db',connect_args={'check_same_thread': False})
 
 connection=engine.connect()
 Base=declarative_base()
@@ -97,4 +97,10 @@ class Role(Base):
         user_roles.append(new_user_role)
         user.roles=user_roles
         session.commit()
-        
+
+def session_add_and_commit(new_obj_name):
+    """speichert new_obj_name in Datenbank ein
+    Parameter: new_obj_name = sqlelement
+    """
+    session.add(new_obj_name)
+    session.commit()
